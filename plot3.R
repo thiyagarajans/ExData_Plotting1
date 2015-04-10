@@ -1,0 +1,12 @@
+# read using sqldf library, data for selected dates only
+library(sqldf)
+library(lubridate)
+df <- read.csv.sql("data.txt", sql = 'select * from file where Date == "1/2/2007" or Date == "2/2/2007"', sep = ";")
+png(filename = "plot3.png", width = 480, height = 480)
+plot(df$Sub_metering_1, type="l", xlab = " ", ylab = "Energy sub metering", xaxt = "n", ylim = c(0,40), yaxt = "n")
+lines(df$Sub_metering_2, col = "red")
+lines(df$Sub_metering_3, col = "blue")
+axis(1, at = c(0, 1400, 2880), labels = c("Thu", "Fri", "Sat"))
+axis(2, at = c(0, 10, 20, 30))
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1:1), col =c("black", "red", "blue"))
+dev.off()
