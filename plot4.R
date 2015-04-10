@@ -7,10 +7,10 @@ png(filename = "plot4.png", width = 480, height = 480)
 par(mfrow=c(2,2))
 plot(df$Global_active_power, type="l", xlab = " ", ylab = "Global Active Power (kilowatts)", xaxt = "n", ylim = c(0,8), yaxt = "n")
 axis(2, at = c(0, 2, 4, 6))
-axis(1, at = c(0, 1400, 2500), labels = c("Thu", "Fri", "Sat"))
+axis(1, at = c(0, 1400, 2880), labels = c("Thu", "Fri", "Sat"))
 #plot 2
 plot(df$Voltage, type = "l", xlab = "datetime", ylab = "Voltage", xaxt = "n", ylim = c(232,248), yaxt = "n")
-axis(1, at = c(0, 1400, 2500), labels = c("Thu", "Fri", "Sat"))
+axis(1, at = c(0, 1400, 2880), labels = c("Thu", "Fri", "Sat"))
 axis(2, at = c(234, 238, 242, 246))
 axis(2, at = c(236, 240, 244), labels = c("", "", ""))
 #plot 3
