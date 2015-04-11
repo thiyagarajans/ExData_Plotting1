@@ -1,5 +1,6 @@
 # read using sqldf library, data for selected dates only
 library(sqldf)
+# Note: Original data file "household_power_consumption.txt" renamed to "data.txt" for convenience
 df <- read.csv.sql("data.txt", sql = 'select * from file where Date == "1/2/2007" or Date == "2/2/2007"', sep = ";")
 png(filename = "plot4.png", width = 480, height = 480) #open graphics device
 par(mfrow=c(2,2)) #Initialize 2 x 2 plots.

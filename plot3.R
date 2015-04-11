@@ -1,5 +1,6 @@
 # read using sqldf library, data for selected dates only
 library(sqldf)
+# Note: Original data file "household_power_consumption.txt" renamed to "data.txt" for convenience
 df <- read.csv.sql("data.txt", sql = 'select * from file where Date == "1/2/2007" or Date == "2/2/2007"', sep = ";")
 png(filename = "plot3.png", width = 480, height = 480)  #open graphics device
 #plotting without axis labels or ticks. Specifying the Y-range manually. Only Sub_metering_1 data are plotted.

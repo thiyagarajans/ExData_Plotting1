@@ -1,3 +1,6 @@
+##Note:  Original data file "household_power_consumption.txt" renamed to "data.txt" for convenience
+
+
 ## Introduction
 
 This assignment uses data from
